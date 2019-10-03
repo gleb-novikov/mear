@@ -3,7 +3,7 @@ package com.twoengers.mear.config;
 /** Класс, содержащий игровые параметры. */
 public class GameConfig {
     /** Дистанция, на которой игрок может взаимодействовать с объектами на карте (в метрах). */
-    public static int distanceInteraction = 150;
+    public static int distanceInteraction = 500;
     /** Радиус загрузки картографических OpenStreetMap данных возле игрока (в метрах). */
     public static int distanceDownloading = 1500;
     /** Дистанция, при выходе за которую начинается подгрузка объектов карты (в метрах). */

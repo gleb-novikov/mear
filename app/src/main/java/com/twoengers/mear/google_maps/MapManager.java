@@ -2,6 +2,7 @@ package com.twoengers.mear.google_maps;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
@@ -21,7 +22,9 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.twoengers.mear.ARActivity;
 import com.twoengers.mear.R;
+import com.twoengers.mear.overpass_api.DownloadingPlaces;
 import com.twoengers.mear.places.ManagerPlaces;
 import com.twoengers.mear.places.Place;
 import com.twoengers.mear.player.Player;
@@ -140,6 +143,8 @@ public class MapManager implements MapEventCallback {
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public void onClickActivationObject(final Place place) {
+        Intent intent = new Intent(context, ARActivity.class);
+        context.startActivity(intent);
 //        /* Окно с вариантами действия. */
 //        LayoutInflater inflater = (LayoutInflater)
 //                context.getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -345,7 +350,9 @@ public class MapManager implements MapEventCallback {
 
             /* Обновляем отображение маркеров на карте, с необязательным флагом.
              * Т.е. маркеры обновятся, только если игрок далеко ушел.*/
-            placeMarkersManager.updatePlaceMarkers(Player.getLatitude(), Player.getLongitude());
+            if (DownloadingPlaces.firstLoad) {
+                placeMarkersManager.updatePlaceMarkers(Player.getLatitude(), Player.getLongitude());
+            }
         }
 
         /** Метод, вызываемый при неудачном завершении анимации камеры. */

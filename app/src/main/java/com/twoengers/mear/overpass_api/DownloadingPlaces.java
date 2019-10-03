@@ -33,6 +33,7 @@ public class DownloadingPlaces {
     private byte stepsDownloading = 0;
     /** Текущее состояние (происходит ли сейчас загрузка или нет). */
     private boolean isDownload;
+    public static boolean firstLoad;
 
     public DownloadingPlaces(Context context, DownloadCallback downloadCallback){
         this.context = context;
@@ -151,6 +152,7 @@ public class DownloadingPlaces {
                 /* Отвязываем Receiver. */
                 LocalBroadcastManager.getInstance(context).unregisterReceiver(mBroadcastReceiver);
 
+                firstLoad = true;
                 Log.d("DOWNLOAD_TEST", "STOP");
             }
             else {
