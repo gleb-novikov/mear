@@ -51,3 +51,43 @@ sceneform.asset('sampledata/server/model.obj',
         'default',
         'sampledata/server/model.sfa',
         'src/main/assets/server')
+
+sceneform.asset('sampledata/earth/CHAHIN_EARTH.obj',
+        'default',
+        'sampledata/earth/CHAHIN_EARTH.sfa',
+        'src/main/assets/earth')
+
+sceneform.asset('sampledata/jupiter/CHAHIN_JUPITER.obj',
+        'default',
+        'sampledata/jupiter/CHAHIN_JUPITER.sfa',
+        'src/main/assets/jupiter')
+
+sceneform.asset('sampledata/mars/1239 Mars.obj',
+        'default',
+        'sampledata/mars/1239 Mars.sfa',
+        'src/main/assets/mars')
+
+sceneform.asset('sampledata/mercury/model.obj',
+        'default',
+        'sampledata/mercury/model.sfa',
+        'src/main/assets/mercury')
+
+sceneform.asset('sampledata/neptune/1240 Neptune.obj',
+        'default',
+        'sampledata/neptune/1240 Neptune.sfa',
+        'src/main/assets/neptune')
+
+sceneform.asset('sampledata/saturn/model.obj',
+        'default',
+        'sampledata/saturn/model.sfa',
+        'src/main/assets/saturn')
+
+sceneform.asset('sampledata/uranus/model.obj',
+        'default',
+        'sampledata/uranus/model.sfa',
+        'src/main/assets/uranus')
+
+sceneform.asset('sampledata/venus/1241 Venus.obj',
+        'default',
+        'sampledata/venus/1241 Venus.sfa',
+        'src/main/assets/venus')
