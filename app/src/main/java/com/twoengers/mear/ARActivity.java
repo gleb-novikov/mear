@@ -75,7 +75,7 @@ public class ARActivity extends AppCompatActivity {
 
     }
 
-    private void onUpdate(FrameTime frameTime, Node contentNode) {
+    private void onUpdate(Node contentNode) {
         ArrayList<Node> overlappedNodes = arFragment.getArSceneView().getScene().overlapTestAll(contentNode);
         for (Node node : overlappedNodes) {
             /*if (node instanceof PassiveNode) {
