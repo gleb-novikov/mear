@@ -57,7 +57,8 @@ public class ARActivity extends AppCompatActivity {
 
         Button b = findViewById(R.id.check);
         b.setOnClickListener(view -> {
-            
+            Toast.makeText(this, "Все верно, +3 балла", Toast.LENGTH_LONG).show();
+            finish();
         });
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -182,7 +183,6 @@ public class ARActivity extends AppCompatActivity {
 
                     TransformableNode planet = new TransformableNode(arFragment.getTransformationSystem());
                     planet.setParent(anchorNode);
-                    planet.select();
 
                     // setup the alert builder
                     AlertDialog.Builder builder = new AlertDialog.Builder(ARActivity.this);
@@ -191,29 +191,30 @@ public class ARActivity extends AppCompatActivity {
                     String[] planets = {"Марс", "Венера", "Юпитер", "Сатурн", "Меркурий", "Уран", "Земля", "Нептун"};
                     builder.setItems(planets, (dialog, which) -> {
                         switch (which) {
-                            case 0: planet.setRenderable(marsRenderable);
-                            case 1: planet.setRenderable(venusRenderable);
-                            case 2: planet.setRenderable(jupiterRenderable);
-                            case 3: planet.setRenderable(saturnRenderable);
-                            case 4: planet.setRenderable(mercuryRenderable);
-                            case 5: planet.setRenderable(uranusRenderable);
-                            case 6: planet.setRenderable(earthRenderable);
-                            case 7: planet.setRenderable(neptuneRenderable);
+                            case 0: { planet.setRenderable(marsRenderable); planet.select(); break; }
+                            case 1: { planet.setRenderable(venusRenderable); planet.select(); break;}
+                            case 2: { planet.setRenderable(jupiterRenderable); planet.select(); break;}
+                            case 3: { planet.setRenderable(saturnRenderable); planet.select(); break;}
+                            case 4: { planet.setRenderable(mercuryRenderable); planet.select(); break;}
+                            case 5: { planet.setRenderable(uranusRenderable); planet.select(); break;}
+                            case 6: { planet.setRenderable(earthRenderable); planet.select(); break;}
+                            case 7: { planet.setRenderable(neptuneRenderable); planet.select(); break;}
                         }
                     });
+
+
                     // create and show the alert dialog
                     AlertDialog dialog = builder.create();
                     dialog.show();
-/*
-                    Anchor anchor = hitresult.createAnchor();
+
+                    /*Anchor anchor = hitresult.createAnchor();
                     AnchorNode anchorNode = new AnchorNode(anchor);
                     anchorNode.setParent(arFragment.getArSceneView().getScene());
 
                     TransformableNode lamp = new TransformableNode(arFragment.getTransformationSystem());
                     lamp.setParent(anchorNode);
-                    lamp.setRenderable(lampPostRenderable);
-                    lamp.select();
-                    lamp.getLocalPosition().*/
+                    lamp.setRenderable(earthRenderable);
+                    lamp.select();*/
                 }
         );
 
